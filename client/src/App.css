@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f7f7f7;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 1vw;
+  flex: 1;
+}
+.col-1 {
+  flex: 5;
+  padding: 1vh 1vw;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.col-2 {
+  flex: 1.5;
+  /* background-color: #1f1572; */
+  color: #fff;
+  padding: 1vh 1vw;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

@@ -1,0 +1,63 @@
+.container {
+  padding: 1.5vh 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.transaction_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.details_container {
+  border: 1px solid #eeedf1;
+  border-radius: 6px;
+  padding: 2vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.heading {
+  color: #6d6e7e;
+}
+.details_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.details_heading {
+  flex: 1;
+}
+.details_text {
+  flex: 1;
+}
+.subdiv {
+  display: flex;
+  align-items: center;
+}
+.date_range_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.date_input_wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.date_input_wrapper label {
+  margin-right: 0.5rem;
+}
+
+.date_input_wrapper input[type="date"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

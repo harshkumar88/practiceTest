@@ -1,0 +1,21 @@
+.delivery_tab_container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  border: 1px solid #b3b3b3;
+  background: #fff;
+}
+.delivery_tab {
+  padding: 0.7vh 1vw;
+  flex: 1;
+  border-radius: 8px;
+  border: none;
+  background-color: #fff;
+  color: #3a7638;
+  transition: all 0.2s;
+}
+.delivery_active_tab {
+  color: white;
+  border-radius: 8px;
+  background: #3a7638;
+}
