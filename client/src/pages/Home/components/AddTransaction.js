@@ -27,7 +27,7 @@ function AddTransaction() {
       const response = await axios.post(
         "http://localhost:8000/api/transactions",
         {
-          user: user._id,
+          userId: user._id,
           ...formData,
         }
       );
