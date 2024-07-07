@@ -91,3 +91,39 @@ input[type="radio"] {
   font-weight: 600;
   border: 1px solid;
 }
+@media screen and (max-width: 768px) {
+  .heading {
+    text-align: center;
+    margin: 2vh 0 3vh 0;
+    font-size: 20px;
+  }
+  .form {
+    padding: 0 5vw;
+    width: 300px;
+  }
+  .label {
+    font-size: 15px;
+  }
+  .icon {
+    font-size: 1rem;
+  }
+  .input {
+    font-size: 15px;
+  }
+  .sub_label {
+    font-size: 15px;
+  }
+  .submit_btn {
+    font-size: 15px;
+    padding: 0.7vh 7vw;
+  }
+  .add_btn {
+    padding: 0.7vh 5vw;
+    background: linear-gradient(
+      90deg,
+      hsla(191, 88%, 81%, 1) 0%,
+      hsla(260, 72%, 82%, 1) 50%,
+      hsla(247, 73%, 69%, 1) 100%
+    );
+  }
+}

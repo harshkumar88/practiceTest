@@ -106,11 +106,30 @@
 @media screen and (max-width: 768px) {
   .main {
     border-radius: 0;
+    padding: 0;
   }
   .heading {
     font-size: 18px;
+    margin-bottom: 0;
   }
   .details_container {
     border: none;
+    padding: 1vh 3vw;
+  }
+  .container {
+    gap: 0;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px #b3b3b3;
+  }
+  .details_container {
+    gap: 0px;
+  }
+  .transaction_header {
+    margin-bottom: 0;
   }
 }

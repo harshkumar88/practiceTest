@@ -56,7 +56,7 @@ function Calendar({ setDatePicker, handleShowDate, maxCheck }) {
       <div ref={calendarRef}>
         <div className="date-range-container">
           <DateRangePicker
-            months={2}
+            months={1}
             onChange={handleDatesChange}
             showSelectionPreview={true}
             moveRangeOnFirstSelection={false}

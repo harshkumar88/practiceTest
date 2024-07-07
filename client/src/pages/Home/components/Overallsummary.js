@@ -5,6 +5,7 @@ import styles from "../css/style.module.css";
 import SummaryChart from "./SummaryChart";
 import SummaryDetails from "./SummaryDetails";
 import axios from "axios";
+import AddTransaction from "./AddTransaction";
 
 function Overallsummary() {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ function Overallsummary() {
         <div className={styles.details_container}>
           <div className={styles.transaction_header}>
             <h3 className={styles.heading}>Summary</h3>
+            {appContext?.isMobile && <AddTransaction />}
           </div>
           <div className={styles.subdiv}>
             <SummaryChart transactionDetails={details} />

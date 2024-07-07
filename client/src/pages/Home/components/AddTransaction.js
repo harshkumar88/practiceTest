@@ -93,7 +93,7 @@ function AddTransaction() {
             Description
           </label>
           <div className={styles.info}>
-            <LuText />
+            <LuText className={styles.icon} />
             <input
               type="text"
               className={styles.input}
@@ -111,7 +111,7 @@ function AddTransaction() {
             Amount
           </label>
           <div className={styles.info}>
-            <MdOutlineCurrencyRupee />
+            <MdOutlineCurrencyRupee className={styles.icon} />
             <input
               type="number"
               className={styles.input}
@@ -138,7 +138,7 @@ function AddTransaction() {
                 required
               />
               <label htmlFor="income" className={styles.sub_label}>
-                Income <FaArrowTrendUp />
+                Income <FaArrowTrendUp className={styles.icon} />
               </label>
             </div>
             <div className={styles.radio_option}>
@@ -152,7 +152,7 @@ function AddTransaction() {
                 required
               />
               <label htmlFor="expense" className={styles.sub_label}>
-                Expense <FaArrowTrendDown />
+                Expense <FaArrowTrendDown className={styles.icon} />
               </label>
             </div>
           </div>
@@ -163,7 +163,7 @@ function AddTransaction() {
             Category
           </label>
           <div className={styles.info}>
-            <TbCategory />
+            <TbCategory className={styles.icon} />
             <div className={styles.select}>
               <Select
                 placeholder="Select Category"
@@ -185,7 +185,7 @@ function AddTransaction() {
                 Sub Category
               </label>
               <div className={styles.info}>
-                <TbCategoryPlus />
+                <TbCategoryPlus className={styles.icon} />
                 <div className={styles.select}>
                   <Select
                     placeholder="Select Sub Category"

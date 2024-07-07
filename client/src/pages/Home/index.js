@@ -4,10 +4,8 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 import { AppContext } from "../../App";
 import Header from "../../components/Header";
-import SummaryChart from "./components/SummaryChart";
 import ExpenseBarChart from "./components/ExpenseBarChart";
 import { useNavigate } from "react-router-dom";
-import SummaryDetails from "./components/SummaryDetails";
 import Transactions from "./components/Transactions";
 import { formatDate } from "../../components/utility";
 import Overallsummary from "./components/Overallsummary";
@@ -56,7 +54,9 @@ function Home() {
   ) : (
     <div className="main-row">
       <div className={styles.main}>
-        <Header user={appContext?.user} />
+        <div className={styles.sticky}>
+          <Header user={appContext?.user} />
+        </div>
         <div className={styles.sub_main}>
           {!appContext?.isMobile && (
             <div className="col-1">
