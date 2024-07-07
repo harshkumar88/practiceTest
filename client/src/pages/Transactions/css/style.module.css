@@ -52,7 +52,7 @@
   margin-top: 1vh;
   display: flex;
   flex-direction: column;
-  max-height: 30vh;
+  /* max-height: 30vh; */
   overflow-y: scroll;
 }
 .details::-webkit-scrollbar {
@@ -108,8 +108,22 @@
   }
   .heading {
     font-size: 18px;
+    margin-bottom: 0;
   }
   .details_container {
     border: none;
+    padding: 1vh 2vw;
+  }
+  .container {
+    gap: 0px;
+  }
+  .details_text {
+    font-size: 15px;
+  }
+  .details_heading {
+    font-size: 14px;
+  }
+  .icon {
+    font-size: 1rem;
   }
 }

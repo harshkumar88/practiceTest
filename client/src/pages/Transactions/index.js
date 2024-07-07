@@ -4,13 +4,11 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 import { AppContext } from "../../App";
 import Header from "../../components/Header";
-import SummaryChart from "./components/SummaryChart";
 import ExpenseBarChart from "./components/ExpenseBarChart";
 import { useNavigate } from "react-router-dom";
-import SummaryDetails from "./components/SummaryDetails";
-import Transactions from "./components/Transactions";
+import TransactionList from "./components/TransactionList";
 
-function Home() {
+function Transactions() {
   let [details, setDetails] = useState([]);
   let [loader, setLoader] = useState(false);
   const appContext = useContext(AppContext);
@@ -51,37 +49,18 @@ function Home() {
       <div className={styles.main}>
         <Header user={appContext?.user} />
         <div className={styles.sub_main}>
-          {!appContext?.isMobile && (
-            <div className="col-1">
-              <div className={styles.container}>
-                <div className={styles.details_container}>
-                  <div className={styles.transaction_header}>
-                    <h3 className={styles.heading}>Category Wise Expenses</h3>
-                  </div>
-                  <div className={styles.subdiv}>
-                    <ExpenseBarChart transactionDetails={details} />
-                  </div>
-                </div>
-                <div className={styles.details_container}>
-                  <Transactions details={details} />
-                </div>
-              </div>
-            </div>
-          )}
-          <div className="col-2">
+          <div className="col-1">
             <div className={styles.container}>
               <div className={styles.details_container}>
                 <div className={styles.transaction_header}>
-                  <h3 className={styles.heading}>Summary</h3>
+                  <h3 className={styles.heading}>Category Wise Expenses</h3>
                 </div>
                 <div className={styles.subdiv}>
-                  <SummaryChart transactionDetails={details} />
+                  <ExpenseBarChart transactionDetails={details} />
                 </div>
               </div>
               <div className={styles.details_container}>
-                <div className={styles.subdiv}>
-                  <SummaryDetails transactionDetails={details} />
-                </div>
+                <TransactionList details={details} />
               </div>
             </div>
           </div>
@@ -91,4 +70,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Transactions;
