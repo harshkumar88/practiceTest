@@ -7,6 +7,10 @@ import Header from "../../components/Header";
 import ExpenseBarChart from "./components/ExpenseBarChart";
 import { useNavigate } from "react-router-dom";
 import TransactionList from "./components/TransactionList";
+import { RiMoneyRupeeCircleLine } from "react-icons/ri";
+import { LuText } from "react-icons/lu";
+import { TbCategory, TbCategoryPlus } from "react-icons/tb";
+import { MdCalendarMonth } from "react-icons/md";
 
 function Transactions() {
   let [details, setDetails] = useState([]);
@@ -47,23 +51,35 @@ function Transactions() {
   ) : (
     <div className="main-row">
       <div className={styles.main}>
-        <Header user={appContext?.user} />
-        <div className={styles.sub_main}>
-          <div className="col-1">
-            <div className={styles.container}>
-              <div className={styles.details_container}>
-                <div className={styles.transaction_header}>
-                  <h3 className={styles.heading}>Category Wise Expenses</h3>
-                </div>
-                <div className={styles.subdiv}>
-                  <ExpenseBarChart transactionDetails={details} />
-                </div>
+        <div className={styles.sticky}>
+          <Header user={appContext?.user} />{" "}
+          <div className={styles.details_container}>
+            <div className={styles.transaction_header}>
+              <h3 className={styles.heading}>Category Wise Expenses</h3>
+            </div>
+            <div className={styles.subdiv}>
+              <ExpenseBarChart transactionDetails={details} />
+            </div>
+          </div>
+          <div className={styles.details_container}>
+            <div className={styles.transaction_header}>
+              <h3 className={styles.heading}>All Transactions</h3>
+            </div>
+            <div className={styles.details_wrapper}>
+              <div className={styles.details_heading}>
+                <LuText className={styles.icon} /> Description
               </div>
-              <div className={styles.details_container}>
-                <TransactionList details={details} />
+              <div className={styles.details_heading}>
+                <RiMoneyRupeeCircleLine className={styles.icon} /> Amount
+              </div>
+              <div className={styles.details_heading}>
+                <TbCategoryPlus className={styles.icon} /> Category
               </div>
             </div>
           </div>
+        </div>
+        <div className={styles.details_container} style={{ paddingTop: "0" }}>
+          <TransactionList details={details} />
         </div>
       </div>
     </div>

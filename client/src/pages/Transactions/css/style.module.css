@@ -105,6 +105,7 @@
 @media screen and (max-width: 768px) {
   .main {
     border-radius: 0;
+    padding: 0;
   }
   .heading {
     font-size: 18px;
@@ -112,7 +113,7 @@
   }
   .details_container {
     border: none;
-    padding: 1vh 2vw;
+    padding: 1vh 3vw;
   }
   .container {
     gap: 0px;
@@ -125,5 +126,11 @@
   }
   .icon {
     font-size: 1rem;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
   }
 }
