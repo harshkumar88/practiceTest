@@ -9,11 +9,18 @@ import ExpenseBarChart from "./components/ExpenseBarChart";
 import { useNavigate } from "react-router-dom";
 import SummaryDetails from "./components/SummaryDetails";
 import Transactions from "./components/Transactions";
+import { formatDate } from "../../components/utility";
 
 function Home() {
   let [details, setDetails] = useState([]);
   let [loader, setLoader] = useState(false);
   const appContext = useContext(AppContext);
+  let [selectedDate, setSelectedDate] = useState({
+    from_slot: formatDate(
+      new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
+    ),
+    to_slot: formatDate(new Date()),
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,15 +28,14 @@ function Home() {
     if (storedUser) {
       const { _id: userId } = JSON.parse(storedUser);
       const getAllTransactions = async () => {
+        let url = `http://localhost:8000/api/transactions/${userId}?from_slot=${selectedDate.from_slot}&to_slot=${selectedDate.to_slot}`;
+
         try {
-          const response = await axios.get(
-            `http://localhost:8000/api/transactions/${userId}`,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const response = await axios.get(url, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           console.log(response?.data);
           setDetails(response?.data.transactions);
         } catch (error) {
@@ -40,7 +46,7 @@ function Home() {
     } else {
       navigate("/login");
     }
-  }, [navigate, appContext.reload]);
+  }, [navigate, appContext.reload, selectedDate]);
 
   return loader ? (
     <center>
@@ -63,7 +69,10 @@ function Home() {
                   </div>
                 </div>
                 <div className={styles.details_container}>
-                  <Transactions details={details} />
+                  <Transactions
+                    details={details}
+                    setSelectedDate={setSelectedDate}
+                  />
                 </div>
               </div>
             </div>
