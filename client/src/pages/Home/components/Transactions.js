@@ -5,6 +5,7 @@ import { LuText } from "react-icons/lu";
 import { TbCategory, TbCategoryPlus } from "react-icons/tb";
 import { MdCalendarMonth } from "react-icons/md";
 import DatePicker from "../../../components/DatePicker/index";
+import { formatDate } from "../../../utils/formatDate";
 
 function Transactions({ details, setSelectedDate }) {
   function handleDate(from_slot, to_slot) {
@@ -58,7 +59,9 @@ function Transactions({ details, setSelectedDate }) {
               <div className={styles.details_text}>
                 {item?.subCategory}
               </div>{" "}
-              <div className={styles.details_text}>{item?.date}</div>
+              <div className={styles.details_text}>
+                {formatDate(item?.date, "dd/mm/yy")}
+              </div>
             </div>
           );
         })}

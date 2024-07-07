@@ -11,8 +11,10 @@ function PopUp(props) {
     setClose,
     Header,
     align,
+    display,
+    setDisplay,
   } = props;
-  let [display, setDisplay] = useState(false);
+  // let [display, setDisplay] = useState(false);
   const formRef = useRef(null);
   useEffect(
     function () {

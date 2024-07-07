@@ -19,6 +19,7 @@ function AddTransaction() {
   const appContext = useContext(AppContext);
   const storedUser = localStorage.getItem("user");
   const user = storedUser ? JSON.parse(storedUser) : null;
+  let [show, setShow] = useState(false);
 
   useEffect(() => {
     setFormData({});
@@ -53,7 +54,8 @@ function AddTransaction() {
       if (response?.data?.success) {
         console.log("Transaction added successfully");
         appContext.setReload(!appContext.reload);
-        setClose(false);
+        setClose(true);
+        setShow(true);
       } else {
         console.error("Error adding transaction:", response?.data);
         throw new Error("Error adding transaction");
@@ -81,7 +83,7 @@ function AddTransaction() {
     <PopUp
       btnName={"+ Add Transaction"}
       btnStyling={styles.add_btn}
-      closeState={close}
+      show={show}
     >
       <h2 className={styles.heading}>Add Transaction</h2>
       <form className={styles.form} onSubmit={handleSubmit}>

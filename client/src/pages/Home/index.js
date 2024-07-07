@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import SummaryDetails from "./components/SummaryDetails";
 import Transactions from "./components/Transactions";
 import { formatDate } from "../../components/utility";
+import Overallsummary from "./components/Overallsummary";
 
 function Home() {
   let [details, setDetails] = useState([]);
@@ -77,23 +78,7 @@ function Home() {
               </div>
             </div>
           )}
-          <div className="col-2">
-            <div className={styles.container}>
-              <div className={styles.details_container}>
-                <div className={styles.transaction_header}>
-                  <h3 className={styles.heading}>Summary</h3>
-                </div>
-                <div className={styles.subdiv}>
-                  <SummaryChart transactionDetails={details} />
-                </div>
-              </div>
-              <div className={styles.details_container}>
-                <div className={styles.subdiv}>
-                  <SummaryDetails transactionDetails={details} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <Overallsummary />
         </div>
       </div>
     </div>
