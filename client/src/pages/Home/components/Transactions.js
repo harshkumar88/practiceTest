@@ -4,8 +4,12 @@ import { RiMoneyRupeeCircleLine } from "react-icons/ri";
 import { LuText } from "react-icons/lu";
 import { TbCategory, TbCategoryPlus } from "react-icons/tb";
 import { MdCalendarMonth } from "react-icons/md";
+import DatePicker from "../../../components/DatePicker/index";
 
-function Transactions({ details }) {
+function Transactions({ details, setSelectedDate }) {
+  function handleDate(from_slot, to_slot) {
+    setSelectedDate({ from_slot: from_slot, to_slot: to_slot });
+  }
   return (
     <div>
       <div className={styles.transaction_header}>
@@ -14,12 +18,7 @@ function Transactions({ details }) {
         <div className={styles.subdiv}>
           <div className={styles.date_range_container}>
             <div className={styles.date_input_wrapper}>
-              {/* <input
-                type="date"
-                id="fromDate"
-                value={fromDate || ""}
-                onChange={(e) => setFromDate(e.target.value)}
-              /> */}
+              <DatePicker callBackfn={handleDate} />
             </div>
           </div>
         </div>

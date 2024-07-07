@@ -18,6 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3vh;
 }
 .details_container {
   border: 1px solid #eeedf1;
